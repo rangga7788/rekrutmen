@@ -1,0 +1,118 @@
+/* CSS Document */
+body{margin:0px; padding:0px; background:url(images/mainbg.gif) 0 0 repeat-x #F6F4E4; color:#6B6854; font:12px Arial, Helvetica, sans-serif;}
+div, p, ul, h1, h2, h4, img, form, label{padding:0px; margin:0px;}
+ul{list-style-type:none;}
+
+/*----MAIN PANEL----*/
+#mainPan{width:800px; margin:0 auto; padding:0px;}
+/*----Left Panel----*/
+#leftPan{width:240px; float:left;}
+#leftTopPan{width:240px; height:125px; margin:0 auto; padding:0; background:url(images/left-top.jpg) 0 0 no-repeat;}
+#leftTopPan img{margin:0px 0 0 37px;}
+
+#leftPan ul{width:240px; height:231px; display:block; background:url(images/menu-bg.jpg) 0 0 no-repeat; padding:28px 0 0;}
+#leftPan ul li{width:200px; height:27px; position:relative; margin:0 auto; background:url(images/dot.gif) 0 100% repeat-x;}
+#leftPan ul li a{width:96px; height:26px; background:url(images/arrow-normal.gif) 0 50% no-repeat #F6F4E4; color:#8F8C73; font:11px Arial, Helvetica, sans-serif; font-weight:bold; padding:0 0 0 22px; text-decoration:none;}
+#leftPan ul li a:hover{background:url(images/arrow-normal.gif) 0 50% no-repeat #F6F4E4; color:#7F0A5F; text-decoration:none;}
+#leftPan ul li.home{width:96px; height:27px; display:block; background: url(images/homebg.gif) 0 0 no-repeat #F6F4E4; color:#7F0A5F; font:11px Arial, Helvetica, sans-serif; font-weight:bold; text-decoration:none; padding:0 0 0 22px;}
+#leftPan ul li.contact{background:none;}
+
+#leftPan ul.linkone{width:240px; padding:0; margin:0px auto; background:none;}
+#leftPan ul.linkone li{width:118px; height:26px; position:relative; margin:0 auto; background:none; padding:0px;}
+#leftPan ul.linkone li a{width:110px; height:26px; display:block; background:url(images/arrow-normal.gif) 0 50% no-repeat #F6F4E4; color:#8F8C73; font:11px  Arial, Helvetica, sans-serif; font-weight:normal; padding:0 0 0 22px; text-decoration:underline;}
+#leftPan ul.linkone li a:hover{background:url(images/arrow-normal.gif) 0 50% no-repeat #F6F4E4; color:#25241E; text-decoration:underline;}
+
+#leftPan h2{width:110px; height:30px; background:#F6F4E4; color:#8F146E; font-size:12px; padding:20px 0 0 20px; font-weight:normal;}
+
+#leftPan form{width:222px; height:173px; position:relative; margin:0 auto; background:url(images/formbg.gif) 0 0 no-repeat #ABA894; color:#fff;}
+#leftPan form input{width:143px; height:17px; margin:3px 0 2px 35px; padding:4px; border:1px solid #666666;}
+#leftPan form label{width:143px; height:18px; margin:2px 0 0 35px; font:11px Arial, Helvetica, sans-serif; font-weight:bold;}
+
+#leftPan form input.button{width:51px; height:17px; float:left; background:url(images/button.gif) 0 0 no-repeat #FEFEFE; color:#fff; font-size:12px; font-weight:bold; line-height:18px; border:none; padding:0 10px 0 0;  margin:3px 10px 2px 28px; cursor:pointer;}
+
+#leftPan form h2{width:150px; height:47px; display:block; background:url(images/memberbg.gif) 0 0 no-repeat #D5D2BC; color:#666; font-size:15px; line-height:47px; padding:0 0 0 65px; font-size:14px;}
+#leftPan form #register{width:100px; height:24px; float:left; margin:3px 0 0; }
+#leftPan form #register a{display:block; background: url(images/arrow4.gif) 100% 50% no-repeat #ABA894; color:#fff; font-size:14px; padding:0 5px 0 0; text-decoration:none;}
+#leftPan form #register a:hover{text-decoration:underline;}
+
+
+/*----/Left Panel----*/
+
+/*----Right Panel----*/
+#rightPan{width:551px; float:left;}
+#rightPan fieldset{ margin:15px;}
+#rightPan form input{ margin:3px 0 2px 3px; padding:4px; border:1px solid #666666;}
+#rightPan form select{ margin:3px 0 2px 3px; padding:4px; border:1px solid #666666;}
+#rightPan form label{ margin:2px 0 0 3px; font:11px Arial, Helvetica, sans-serif; font-weight:bold;}
+#rightPan form textarea{ font-family:Arial; margin:3px 0 2px 3px; padding:4px; border:1px solid #666666;}
+#rightPan form input.button{ padding:10px; cursor:pointer; background:#FF9900;}
+#rightPan ul{ margin-left:40px;}
+#rightPan li{ margin:0 auto;  list-style:square; }
+#rightPan h1{width:438px; height:124px; background:url(images/header.jpg) 0 0 no-repeat #D33F9F; color:#fff; font:20px Arial, Times, serif; padding:37px 0 0 13px; font-weight:bold;}
+#rightPan h1 p{font:13px  Arial, Helvetica, sans-serif; font-weight:bold; padding:0px;}
+#rightPan h2{ height:56px; background:url(images/icon2.jpg) 0 0 no-repeat #F6F4E4; color:#8F146E; font-size:16px; line-height:25px; padding:0 0 0 75px; margin:29px 0 0 9px;}
+
+#rightPan h4{width:240px; height:50px; display:block; background:url(images/icon2.jpg) 0 0 no-repeat #F6F4E4; color:#8F146E; font-size:16px; line-height:22px; padding:0 0 0 75px; margin:0 0 0 9px; clear:both;}
+#rightPan h4 span{color:#9F9D81; background:#F6F4E4; font-size:12px; font-weight:bold; line-height:18px;}
+
+#rightPan p{padding:20px 0 0 9px;}
+#rightPan p.bottompadding{padding:22px 0 0 9px; margin:0 0 38px 0;}
+#rightPan p span.boldtext{font-weight:bold;}
+#rightPan p span.magedacolortext{background:#F6F4E4; color:#8F146E;}
+#rightmorePan{width:420px; height:28px; display:block; background:url(images/pattern.gif) 0 0 repeat; border:1px solid #fff; line-height:28px; padding:0 0 0 20px; margin:0 0 0 9px;}
+#rightmorePan p.textposition{float:left; padding:0 0 0 18px; margin:0px;}
+#rightmorePan a{float:left; width:36px; height:28px; display:block; background:url(images/morebg.gif) 0 0 no-repeat #D5D2BC; color:#1F1E15; text-decoration:none; padding:0 15px 0 45px; margin:0 0 0 135px;}
+#rightmorePan a:hover{text-decoration:underline;}
+
+#rightmorenextPan{width:420px; height:28px; display:block; background:url(images/pattern.gif) 0 0 repeat; border:1px solid #fff; line-height:28px; padding:0 0 0 20px; margin:0 0 0 9px;}
+#rightmorenextPan p.textposition{float:left; padding:0 0 0 18px; margin:0px;}
+#rightmorenextPan a{float:left; width:36px; height:28px; display:block; background:url(images/morebg.gif) 0 0 no-repeat #D5D2BC; color:#1F1E15; text-decoration:none; padding:0 15px 0 45px; margin:0 0 0 135px;}
+#rightmorenextPan a:hover{text-decoration:underline;}
+
+
+#rightaddPan{width:442px; height:170px; position:relative; margin:0 auto; padding:50px 0 0 9px;}
+#rightaddonePan{width:218px; height:110px; float:left; background:url(images/image1.jpg) 100% 0 no-repeat #CBC8B2; color:#fff; }
+#rightaddonePan p.whitetext{font-size:22px; padding:16px 0 0 16px;}
+#rightaddonePan p.whitetextbig{font-size:28px; padding:10px 0 0 16px;}
+#rightaddonePan a{width:97px; height:33px; display:block; background:url(images/viewmore.jpg) 0 0 no-repeat #ABA894; color:#fff; font-size:16px; line-height:30px; text-decoration:none; margin:15px 0 0; padding:0 0 0 55px;}
+#rightaddonePan a:hover{text-decoration:underline;}
+
+#rightaddtwoPan{width:218px; height:110px; float:left; background:url(images/image2.jpg) 100% 0 no-repeat #CBC8B2; color:#fff; margin:0 0 0 6px;}
+#rightaddtwoPan p.whitetext{font-size:22px; padding:16px 0 0 16px;}
+#rightaddtwoPan p.whitetextbig{font-size:28px; padding:10px 0 0 16px;}
+
+#rightaddtwoPan a{width:82px; height:33px; display:block; background:url(images/viewmore.jpg) 0 0 no-repeat #ABA894; color:#fff; font-size:16px; line-height:30px; text-decoration:none; margin:15px 0 0; padding:0 0 0 55px;}
+#rightaddtwoPan a:hover{text-decoration:underline;}
+
+/*----/Right Panel----*/
+
+/*----Footer Panel----*/
+#footermainPan{background:url(images/footerbg.gif) 0 0 repeat-x #6B6854; color:#fff; padding-top:10px; margin:0 auto; height:30px; clear:both; text-align:center;
+	margin:0 auto;
+	position:fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;}
+#footerPan{width:800px; margin:0 auto; font:12px/15px Arial, Helvetica, sans-serif; font-weight:normal;}
+#footerPan a:hover{background:url() no-repeat 45px 0px #B0AD93; color:#353427; text-decoration:none;}
+.cleaner_h0 { clear: both; width:100%;}
+.cleaner_h5 { clear: both; width:100%; height: 5px; }
+.cleaner_h10 { clear: both; width:100%; height: 10px; }
+.cleaner_h20 { clear: both; width:100%; height: 20px; }
+.cleaner_h30 { clear: both; width:100%; height: 30px; }
+.cleaner_h40 { clear: both; width:100%; height: 40px; }
+.cleaner_h50 { clear: both; width:100%; height: 50px; }
+.cleaner_h60 { clear: both; width:100%; height: 60px; }
+
+
+
+#loading {
+position:fixed;
+top: 0; 
+width:100%; 
+text-align:center; 
+color: #fff; 
+background-image:url(images/spotlight-bg.png);
+padding:15px 0px 15px 0px;
+font-size:12px;
+}
