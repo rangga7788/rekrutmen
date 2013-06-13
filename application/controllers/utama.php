@@ -413,9 +413,9 @@ parent::__construct();
 		if($session!=""){
 		$data["username"]=$_SESSION['username'];
 		$noreg=$_SESSION['username'];
-		$id["dataq"]=$this->Mod_utama->Ambildata($noreg);
+		$id["dataq"]=$this->Mod_utama->Ambildata($noreg, 'data_user');
 		$dataq=$id["dataq"];
-		$file=$this->Mod_utama->Ambilgambar($noreg);
+		$file=$this->Mod_utama->Ambilgambar($noreg, 'data_user');
 		$data["gambar"]=$file;
 		foreach($dataq->result() as $n){}
 		$data["nama"]=$n->nama;

@@ -2,7 +2,7 @@
 <h1>Statistik Pendaftaran</h1>
 <p>&nbsp;</p>
 
-<table border="0" width="593" height="41">
+<table align="center" width="100%">
 <tbody>
 <tr>
 <td><span style="font-size: large;"></span></td>
@@ -20,13 +20,18 @@ foreach($bidang->result_array() as $p){ ?>
 $id = $p['id_bidang'];
 $total = $this->Mod_master->Totalbid($id);
 echo $total;?></span> Orang</span></td>
-<td><span style="font-size: large;"><a href='<?php echo base_url().'index.php/master/hapusbid/'.$p['id_bidang']?>' ><div class='submitButton2'>hapus!</div></a></span></td>
+<td><span style="font-size: large;"><a href='<?php echo base_url().'index.php/master/hapusbid/'.$p['id_bidang']?>' onClick='return confirm("Anda yakin ingin menghapus data ini?")'><div class='submitButton2'>hapus!</div></a></span></td>
 </tr>
 <?php 
 $no++;
  }
 ?>
 </tbody>
+</table>
+<table align="center" width="100%">
+<tr>
+	<td width="80%"><a href='master/tambahbid'><div class='submitButton2'>Tambah Bidang Kerja</div></a></td>
+</tr>
 </table>
 
 <a href="<?php echo base_url(); ?>index.php/master/rekap"><div class="submitButton">Lihat Semua Daftar</div></a>

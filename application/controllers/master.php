@@ -126,6 +126,7 @@ class Master extends CI_Controller {
 				$offset = $page;
 				endif;
 				$data["pl"] = $this->Mod_master->Daftarpl($offset,$limit);
+				$data["bids"] = $this->Mod_utama->Bidang();
 				$tot = $this->Mod_master->Total('pl','data_user','state');
 				$config['base_url'] = base_url() . '/index.php/master/rekap/';
 				$config['total_rows'] = $tot->num_rows();
@@ -186,6 +187,53 @@ class Master extends CI_Controller {
 			$this->db->trans_start();
 			$this->db->where('id','Umum');
 			$this->db->update('pengumuman',$in3);
+			$this->db->trans_complete();
+			if ($this->db->trans_status() === FALSE)
+				{
+					?><script type="text/javascript" language="javascript">
+					alert("ada yang SALAH...! Silahkan ulangi...");
+					javascript:history.go(-1);
+					</script><?php
+				}
+				else
+				{ 
+					?><script type="text/javascript" language="javascript">
+					javascript:history.go(-1);
+					</script><?php
+			}
+			}
+			else
+			{
+				?>
+				<script type="text/javascript" language="javascript">
+				alert("Anda tidak berhak masuk ke Control Panel Admin...!!!");
+				window.location = "<?php echo base_url(); ?>index.php"
+				</script>
+				<?php
+			}
+		}
+		else
+		{
+			?>
+			<script type="text/javascript" language="javascript">
+			alert("Anda harus login...!");
+			window.location = "<?php echo base_url(); ?>index.php"
+			</script>
+			<?php
+		}
+	}	
+	
+	function simpanbid()
+	{
+		if ( isset($_SESSION['username']) == TRUE )
+		{ 
+			$siapa=$_SESSION['username'];
+			if ($siapa == 'admin')
+			{
+			$d["nama_bidang"]=$this->input->post('bidang');
+			$d["rincian"]=$this->input->post('rincian');
+			$this->db->trans_start();
+			$this->db->insert('data_bidang',$d);
 			$this->db->trans_complete();
 			if ($this->db->trans_status() === FALSE)
 				{
@@ -363,6 +411,39 @@ class Master extends CI_Controller {
 			<?php
 		}
 	}
+	
+	function tambahbid()
+	{
+		if ( isset($_SESSION['username']) == TRUE )
+		{ 
+			$siapa=$_SESSION['username'];
+			if ($siapa == 'admin')
+			{
+				$data['scriptmce'] = $this->scripttiny_mce();
+				$this->load->view('master/bg_atas', $data);
+				$this->load->view('master/tambahbid');
+				$this->load->view('master/bg_bawah');
+			}
+			else
+			{
+				?>
+				<script type="text/javascript" language="javascript">
+				alert("Anda tidak berhak masuk ke Control Panel Admin...!!!");
+				window.location = "<?php echo base_url(); ?>index.php"
+				</script>
+				<?php
+			}
+		}
+		else
+		{
+			?>
+			<script type="text/javascript" language="javascript">
+			alert("Anda harus login...!");
+			window.location = "<?php echo base_url(); ?>index.php"
+			</script>
+			<?php
+		}
+	}
 
 
 	function hapus()
@@ -375,6 +456,41 @@ class Master extends CI_Controller {
 				$d = $this->uri->segment(3);
 				$id = $d."/REK/2013";
 				$this->Mod_master->Hapus_Sesuatu($id, 'no_reg', 'data_user');
+				?><script type="text/javascript" language="javascript">
+					javascript:history.go(-1);
+					</script><?php
+			}
+			else
+			{
+				?>
+				<script type="text/javascript" language="javascript">
+				alert("Anda tidak berhak masuk ke Control Panel Admin...!!!");
+				window.location = "<?php echo base_url(); ?>index.php"
+				</script>
+				<?php
+			}
+		}
+		else
+		{
+			?>
+			<script type="text/javascript" language="javascript">
+			alert("Anda harus login...!");
+			window.location = "<?php echo base_url(); ?>index.php"
+			</script>
+			<?php
+		}
+	}
+
+
+	function hapusbid()
+	{
+		if ( isset($_SESSION['username']) == TRUE )
+		{ 
+			$siapa=$_SESSION['username'];
+			if ($siapa == 'admin')
+			{
+				$id = $this->uri->segment(3);
+				$this->Mod_master->Hapus_Sesuatu($id, 'id_bidang', 'data_bidang');
 				?><script type="text/javascript" language="javascript">
 					javascript:history.go(-1);
 					</script><?php
@@ -506,7 +622,7 @@ class Master extends CI_Controller {
 		$file=$this->Mod_master->Ambilgambar($id);
 		$data["gambar"]=$file;
 		$data["noreg"]=$id;
-		$semua["dataq"]=$this->Mod_utama->Ambildata($id);
+		$semua["dataq"]=$this->Mod_utama->Ambildata($id, 'data_user');
 		$dataq=$semua["dataq"];
 		foreach($dataq->result() as $n){}
 		$data["nama"]=$n->nama;
@@ -516,58 +632,13 @@ class Master extends CI_Controller {
 		$data["tplahir"]=$n->tmp_lahir;
 		$data["tgllahir"]=$n->tgl_lahir;
 		$data["status"]=$n->status;
-		$data["bidang"]=$n->id_bidang;
+		$data["bidang"]=$this->Mod_utama->Namabidang($id);
 		$data["agama"]=$n->agama;
 		$data["tlp"]=$n->tlp;
 		$data["email"]=$n->email;
-		$data["formal1"]=$n->formal1;
-		$data["sekolah1"]=$n->sekolah1;
-		$data["formal2"]=$n->formal2;
-		$data["sekolah2"]=$n->sekolah2;
-		$data["formal3"]=$n->formal3;
-		$data["sekolah3"]=$n->sekolah3;
-		$data["formal4"]=$n->formal4;
-		$data["sekolah4"]=$n->sekolah4;
-		$data["nformal1"]=$n->nformal1;
-		$data["nformal11"]=$n->nformal11;
-		$data["nformal2"]=$n->nformal2;
-		$data["nformal22"]=$n->nformal22;
-		$data["nformal3"]=$n->nformal3;
-		$data["nformal33"]=$n->nformal33;
-		$data["nformal4"]=$n->nformal4;
-		$data["nformal44"]=$n->nformal44;
-		$data["nformal5"]=$n->nformal5;
-		$data["nformal55"]=$n->nformal55;
-		$data["nformaltp1"]=$n->nformaltp1;
-		$data["nformaltp2"]=$n->nformaltp2;
-		$data["nformaltp3"]=$n->nformaltp3;
-		$data["nformaltp4"]=$n->nformaltp4;
-		$data["nformaltp5"]=$n->nformaltp5;
-		$data["pengalam1"]=$n->pengalam1;
-		$data["pengalam11"]=$n->pengalam11;
-		$data["pengalamtp1"]=$n->pengalamtp1;
-		$data["pengalam2"]=$n->pengalam2;
-		$data["pengalam22"]=$n->pengalam22;
-		$data["pengalamtp2"]=$n->pengalamtp2;
-		$data["pengalam3"]=$n->pengalam3;
-		$data["pengalam33"]=$n->pengalam33;
-		$data["pengalamtp3"]=$n->pengalamtp3;
-		$data["pengalam4"]=$n->pengalam4;
-		$data["pengalam44"]=$n->pengalam44;
-		$data["pengalamtp4"]=$n->pengalamtp4;
-		$data["pengalam5"]=$n->pengalam5;
-		$data["pengalam55"]=$n->pengalam55;
-		$data["pengalamtp5"]=$n->pengalamtp5;
-		$data["skill1"]=$n->skill1;
-		$data["skill2"]=$n->skill2;
-		$data["skill3"]=$n->skill3;
-		$data["skill4"]=$n->skill4;
-		$data["skill5"]=$n->skill5;
-		$data["skill6"]=$n->skill6;
-		$data["skill7"]=$n->skill7;
-		$data["skill8"]=$n->skill8;
-		$data["skill9"]=$n->skill9;
-		$data["skill10"]=$n->skill10;
+		$cetak = $this->Mod_master->Report('formal',$id,'no_reg','kat','data_pendidikan');
+		$data["pend"] = $cetak;
+		
 			$this->load->view('master/report', $data);
 			
 			}

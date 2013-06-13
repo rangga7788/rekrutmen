@@ -44,6 +44,12 @@ class Mod_master extends CI_Model
 			return $q;
 		}
 
+		function Report($kat,$id,$where1,$where2,$tabel)
+		{
+			$q=$this->db->query("select * from $tabel where $where1='$id' and $where2='$kat'");
+			return $q;
+		}
+
 		function Ambil($id,$field,$where,$tabel)
 		{
 			$q=$this->db->query("select $field from $tabel where $where='$id'");

@@ -51,8 +51,15 @@ $bidang = $this->Mod_utama->Namabidang($s['no_reg']);
 <table align="center" width="100%"><tr><td><?php echo $paginator; ?></td></tr></table>
 <table align="center" width="100%">
 <tr>
-	<td width="20%"><form><select><option value="1">Programmer</option><option value="2">Networking</option></select></form></td>
-	<td width="80%"><a href='cetaktabel'  ><div class='submitButton2'>Cetak Tabel</div></a></td>
+	<td width="20%"><form><select>
+<?php
+foreach($bids->result_array() as $k)
+{
+echo "<option value='".$k['id_bidang']."'>".$k['nama_bidang']."</option>";
+}
+?>
+</select></form></td>
+	<td width="80%"><a href='cetaktabel'  ><div class='submitButton2'>Cetak Tabel per bidang kerja</div></a></td>
 </tr>
 </table>
 </table>

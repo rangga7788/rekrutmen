@@ -109,7 +109,7 @@ mso-bidi-font-size:11.0pt'><o:p>&nbsp;</o:p></span></p>
   padding:0cm 5.4pt 0cm 5.4pt;height:19.75pt'>
   <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
   text-align:center;line-height:normal'><b style='mso-bidi-font-weight:normal'><span
-  style='font-size:10.0pt;mso-bidi-font-size:11.0pt'><?php echo "$noreg"; ?><br><?php if ($bidang === '1'){$bid='PROGRAMMER';}else{$bid='NETWORKING';} echo "$bid"; ?><o:p></o:p></span></b></p>
+  style='font-size:10.0pt;mso-bidi-font-size:11.0pt'><?php echo "$noreg"; ?><br><?php echo "$bidang"; ?><o:p></o:p></span></b></p>
   </td>
   <td width=442 colspan=2 style='width:331.6pt;padding:0cm 5.4pt 0cm 5.4pt;
   height:19.75pt'>
@@ -361,6 +361,27 @@ mso-bidi-font-size:11.0pt'><o:p>&nbsp;</o:p></span></p>
   Sekolah/PT dan Jurusan<o:p></o:p></span></p>
   </td>
  </tr>
+<?php 	foreach($pend->result_array() as $p); if(empty($p)){ $no = 0; ?>
+<tr bgcolor='#D6F3FF'>
+<td><?php echo $no; ?></td>
+<td><?php echo ''; ?></td>
+<td><?php echo ''; ?></td>
+<td><?php echo 'Belum ada data...'; ?></td>
+<?php 
+} else {
+$no = 1;
+foreach($pend->result() as $p){ ?>
+<tr bgcolor='#D6F3FF'>
+<td><?php echo $no; ?></td>
+<td><?php echo $p['tingkat']; ?></td>
+<td><?php echo $p['thn_tamat']; ?></td>
+<td><?php echo $p['sekolah']; ?></td>
+</tr>
+<?php 
+$no++;
+ }
+  }
+?>
  <tr style='mso-yfti-irow:15'>
   <td width=32 valign=top style='width:24.3pt;border:solid #A6A6A6 1.0pt;
   mso-border-themecolor:background1;mso-border-themeshade:166;border-top:none;
@@ -405,138 +426,7 @@ mso-bidi-font-size:11.0pt'><o:p>&nbsp;</o:p></span></p>
   normal'><span style='font-size:10.0pt;mso-bidi-font-size:11.0pt'><?php echo"$sekolah1";?><o:p></o:p></span></p>
   </td>
  </tr>
- <tr style='mso-yfti-irow:16'>
-  <td width=32 valign=top style='width:24.3pt;border:solid #A6A6A6 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:166;border-top:none;
-  mso-border-top-alt:solid #A6A6A6 .5pt;mso-border-top-themecolor:background1;
-  mso-border-top-themeshade:166;mso-border-alt:solid #A6A6A6 .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:166;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span style='font-size:10.0pt;mso-bidi-font-size:11.0pt'>2<o:p></o:p></span></p>
-  </td>
-  <td width=149 style='width:111.9pt;border-top:none;border-left:none;
-  border-bottom:solid #A6A6A6 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:166;border-right:solid #A6A6A6 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:166;mso-border-top-alt:solid #A6A6A6 .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:166;
-  mso-border-left-alt:solid #A6A6A6 .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:166;mso-border-alt:solid #A6A6A6 .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:166;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span style='font-size:10.0pt;mso-bidi-font-size:11.0pt'>SLTP<o:p></o:p></span></p>
-  </td>
-  <td width=133 style='width:100.1pt;border-top:none;border-left:none;
-  border-bottom:solid #A6A6A6 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:166;border-right:solid #A6A6A6 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:166;mso-border-top-alt:solid #A6A6A6 .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:166;
-  mso-border-left-alt:solid #A6A6A6 .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:166;mso-border-alt:solid #A6A6A6 .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:166;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
-  text-align:center;line-height:normal'><span style='font-size:10.0pt;
-  mso-bidi-font-size:11.0pt'><?php echo"$formal2";?><o:p></o:p></span></p>
-  </td>
-  <td width=309 style='width:231.5pt;border-top:none;border-left:none;
-  border-bottom:solid #A6A6A6 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:166;border-right:solid #A6A6A6 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:166;mso-border-top-alt:solid #A6A6A6 .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:166;
-  mso-border-left-alt:solid #A6A6A6 .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:166;mso-border-alt:solid #A6A6A6 .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:166;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span style='font-size:10.0pt;mso-bidi-font-size:11.0pt'><?php echo"$sekolah2";?><o:p></o:p></span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:17'>
-  <td width=32 valign=top style='width:24.3pt;border:solid #A6A6A6 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:166;border-top:none;
-  mso-border-top-alt:solid #A6A6A6 .5pt;mso-border-top-themecolor:background1;
-  mso-border-top-themeshade:166;mso-border-alt:solid #A6A6A6 .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:166;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span style='font-size:10.0pt;mso-bidi-font-size:11.0pt'>3<o:p></o:p></span></p>
-  </td>
-  <td width=149 style='width:111.9pt;border-top:none;border-left:none;
-  border-bottom:solid #A6A6A6 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:166;border-right:solid #A6A6A6 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:166;mso-border-top-alt:solid #A6A6A6 .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:166;
-  mso-border-left-alt:solid #A6A6A6 .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:166;mso-border-alt:solid #A6A6A6 .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:166;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span style='font-size:10.0pt;mso-bidi-font-size:11.0pt'>SLTA<o:p></o:p></span></p>
-  </td>
-  <td width=133 style='width:100.1pt;border-top:none;border-left:none;
-  border-bottom:solid #A6A6A6 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:166;border-right:solid #A6A6A6 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:166;mso-border-top-alt:solid #A6A6A6 .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:166;
-  mso-border-left-alt:solid #A6A6A6 .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:166;mso-border-alt:solid #A6A6A6 .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:166;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
-  text-align:center;line-height:normal'><span style='font-size:10.0pt;
-  mso-bidi-font-size:11.0pt'><?php echo"$formal3";?><o:p></o:p></span></p>
-  </td>
-  <td width=309 style='width:231.5pt;border-top:none;border-left:none;
-  border-bottom:solid #A6A6A6 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:166;border-right:solid #A6A6A6 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:166;mso-border-top-alt:solid #A6A6A6 .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:166;
-  mso-border-left-alt:solid #A6A6A6 .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:166;mso-border-alt:solid #A6A6A6 .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:166;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span style='font-size:10.0pt;mso-bidi-font-size:11.0pt'><?php echo"$sekolah3";?><o:p></o:p></span></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:18'>
-  <td width=32 valign=top style='width:24.3pt;border:solid #A6A6A6 1.0pt;
-  mso-border-themecolor:background1;mso-border-themeshade:166;border-top:none;
-  mso-border-top-alt:solid #A6A6A6 .5pt;mso-border-top-themecolor:background1;
-  mso-border-top-themeshade:166;mso-border-alt:solid #A6A6A6 .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:166;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span style='font-size:10.0pt;mso-bidi-font-size:11.0pt'>4<o:p></o:p></span></p>
-  </td>
-  <td width=149 style='width:111.9pt;border-top:none;border-left:none;
-  border-bottom:solid #A6A6A6 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:166;border-right:solid #A6A6A6 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:166;mso-border-top-alt:solid #A6A6A6 .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:166;
-  mso-border-left-alt:solid #A6A6A6 .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:166;mso-border-alt:solid #A6A6A6 .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:166;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span style='font-size:10.0pt;mso-bidi-font-size:11.0pt'>Univ./PT<o:p></o:p></span></p>
-  </td>
-  <td width=133 style='width:100.1pt;border-top:none;border-left:none;
-  border-bottom:solid #A6A6A6 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:166;border-right:solid #A6A6A6 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:166;mso-border-top-alt:solid #A6A6A6 .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:166;
-  mso-border-left-alt:solid #A6A6A6 .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:166;mso-border-alt:solid #A6A6A6 .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:166;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
-  text-align:center;line-height:normal'><span style='font-size:10.0pt;
-  mso-bidi-font-size:11.0pt'><?php echo"$formal4";?><o:p></o:p></span></p>
-  </td>
-  <td width=309 style='width:231.5pt;border-top:none;border-left:none;
-  border-bottom:solid #A6A6A6 1.0pt;mso-border-bottom-themecolor:background1;
-  mso-border-bottom-themeshade:166;border-right:solid #A6A6A6 1.0pt;mso-border-right-themecolor:
-  background1;mso-border-right-themeshade:166;mso-border-top-alt:solid #A6A6A6 .5pt;
-  mso-border-top-themecolor:background1;mso-border-top-themeshade:166;
-  mso-border-left-alt:solid #A6A6A6 .5pt;mso-border-left-themecolor:background1;
-  mso-border-left-themeshade:166;mso-border-alt:solid #A6A6A6 .5pt;mso-border-themecolor:
-  background1;mso-border-themeshade:166;padding:0cm 5.4pt 0cm 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span style='font-size:10.0pt;mso-bidi-font-size:11.0pt'><?php echo"$sekolah4";?><o:p></o:p></span></p>
-  </td>
- </tr>
+ 
  <tr style='mso-yfti-irow:19'>
   <td width=32 valign=top style='width:24.3pt;border:none;mso-border-top-alt:
   solid #A6A6A6 .5pt;mso-border-top-themecolor:background1;mso-border-top-themeshade:

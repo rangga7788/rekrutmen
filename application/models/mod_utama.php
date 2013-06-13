@@ -174,9 +174,9 @@ class Mod_utama extends CI_Model
 				}
 		}
 		
-		function Ambildata($noreg)
+		function Ambildata($noreg, $tabel)
 		{
-			$q=$this->db->query("select * from data_user where no_reg='$noreg'");
+			$q=$this->db->query("select * from $tabel where no_reg='$noreg'");
 			return $q;
 		}
 		
